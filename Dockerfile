@@ -8,7 +8,7 @@ ENV HELM_FILENAME helm-${HELM_VERSION}-linux-amd64.tar.gz
 
 WORKDIR /
 
-RUN apk add --update --no-cache curl git ca-certificates bash \
+RUN apk add --update --no-cache curl git ca-certificates bash ruby\
   && apk add --update -t deps gettext tar gzip \
   && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBERNETES_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
   && curl -L https://storage.googleapis.com/kubernetes-helm/${HELM_FILENAME} | tar xz \ 
